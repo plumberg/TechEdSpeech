@@ -1,6 +1,9 @@
 package com.hannahryzhuk.techedapp;
 
 import com.codename1.ui.Button;
+import com.codename1.ui.Command;
+import com.codename1.ui.Form;
+import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.layouts.BoxLayout;
 
 
@@ -12,6 +15,13 @@ public class DashboardForm extends com.codename1.ui.Form {
     public DashboardForm(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);
 
+        Command back  = new Command("Back") {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                    showBack();
+            }
+        };
+
         setTitle("Dashboard");
         setLayout(new BoxLayout(BoxLayout.Y_AXIS));
 
@@ -22,6 +32,14 @@ public class DashboardForm extends com.codename1.ui.Form {
         add(myClassesBtn);
         add(profileBtn);
         add(aboutBtn);
+
+
+        myClassesBtn.addActionListener(evt->{
+            Form myClassesForm = new MyClassesForm();
+            myClassesForm.setBackCommand(back);
+            myClassesForm.getToolbar().setBackCommand(back);
+            myClassesForm.show();
+        });
 
     }
     
