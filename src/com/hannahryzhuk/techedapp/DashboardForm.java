@@ -22,7 +22,7 @@ public class DashboardForm extends com.codename1.ui.Form {
             }
         };
 
-        setTitle("Dashboard");
+        setTitle("Hearn Dashboard");
         setLayout(new BoxLayout(BoxLayout.Y_AXIS));
 
         Button myClassesBtn = new Button("My Classes");
@@ -36,6 +36,20 @@ public class DashboardForm extends com.codename1.ui.Form {
 
         myClassesBtn.addActionListener(evt->{
             Form myClassesForm = new MyClassesForm();
+            myClassesForm.setBackCommand(back);
+            myClassesForm.getToolbar().setBackCommand(back);
+            myClassesForm.show();
+        });
+
+        profileBtn.addActionListener(evt->{
+            Form myClassesForm = new ProfileForm();
+            myClassesForm.setBackCommand(back);
+            myClassesForm.getToolbar().setBackCommand(back);
+            myClassesForm.show();
+        });
+
+        aboutBtn.addActionListener(evt->{
+            Form myClassesForm = new TextToSpeechForm();
             myClassesForm.setBackCommand(back);
             myClassesForm.getToolbar().setBackCommand(back);
             myClassesForm.show();

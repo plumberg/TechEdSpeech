@@ -13,7 +13,7 @@ public class WelcomeForm extends com.codename1.ui.Form {
     
     public WelcomeForm(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);
-        setTitle("Welcome");
+        setTitle("Welcome to Hearn App");
         setLayout(new BorderLayout());
         Button getStartedBtn = new Button("Let's Get Started!");
 
